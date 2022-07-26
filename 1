@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n, m; 
+    cin >> n >> m; 
+    int mat [n][m]; 
+    for (int i = 0; i<n; i++){
+        for(int j = 0; j < m; j++){
+            cin >> mat [i][j];  // i = filas, j = columnas 
+        }
+    }
+    int maxi, mini; 
+    maxi = mat [0][0]; 
+    mini = mat [0][0];
+    for(int j = 0; j < m; j++ ){
+        for(int i = 0; i < n; i++){
+            if(mat [i][j] > maxi){
+                maxi = mat[i][j];
+            }
+            if (mat [i][j] < mini){
+                mini = mat[i][j];
+            }
+        }
+        cout << '\n';
+    }
+    
+    cout << "Mini: " << mini << " " << "Maxi: "<< maxi; 
+
+    return 0;
+}
